@@ -52,6 +52,7 @@ class App extends React.Component {
                   <BuildingList
                     data={this.props.data}
                     filterText={this.state.filterText}
+                    selectedUpdate={this.selectedUpdate.bind(this)}
                   />
                 </table>
               </div>
