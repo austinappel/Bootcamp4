@@ -35,7 +35,10 @@ class App extends React.Component {
           <h1>UF Directory App</h1>
         </div>
 
-        <Search/>
+        <Search
+          filterText={this.state.filterText}
+          filterUpdate={this.filterUpdate.bind(this)}
+        />
         <main>
           <div className="row">
             <div className="column1">
