@@ -58,7 +58,10 @@ class App extends React.Component {
               </div>
             </div>
             <div className="column2">
-              <ViewBuilding />
+              <ViewBuilding
+                data={this.props.data}
+                selectedBuilding={this.state.selectedBuilding}
+              />
             </div>
           </div>
           <Credit />

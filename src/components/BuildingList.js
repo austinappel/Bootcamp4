@@ -1,7 +1,6 @@
 import React from 'react';
 
 class BuilingList extends React.Component {
-		//selectedUpdate = this.props.selectedUpdate;
 
 	render() {
 		//console.log('This is my directory file', this.props.data);
