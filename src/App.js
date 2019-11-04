@@ -11,7 +11,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       filterText: '',
-      selectedBuilding: 0
+      selectedBuilding: 0,
+      removedBuildings: []
     };
   }
 
@@ -27,6 +28,16 @@ class App extends React.Component {
     this.setState({
       selectedBuilding: id
     })
+  }
+
+  removedUpdate(id) {
+    var newArray = this.state.removedBuildings; 
+    newArray.push(id);
+    this.setState({
+      removedBuildings: newArray
+    })
+
+    console.log("Removed buildings: ", this.state.removedBuildings)
   }
 
   render() {
@@ -55,6 +66,7 @@ class App extends React.Component {
                     data={this.props.data}
                     filterText={this.state.filterText}
                     selectedUpdate={this.selectedUpdate.bind(this)}
+                    removedBuildings={this.state.removedBuildings}
                   />
                 </table>
               </div>
@@ -64,7 +76,10 @@ class App extends React.Component {
                 data={this.props.data}
                 selectedBuilding={this.state.selectedBuilding}
               />
-              <RemoveBuilding />
+              <RemoveBuilding
+                removedUpdate={this.removedUpdate.bind(this)}
+                selectedBuilding={this.state.selectedBuilding}
+              />
             </div>
           </div>
           <Credit />

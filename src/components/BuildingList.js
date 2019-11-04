@@ -13,6 +13,7 @@ class BuilingList extends React.Component {
 				return directory.name.toLowerCase().indexOf(filterText.toLowerCase()) >= 0
 			})
 			.map(directory => {
+				if (!this.props.removedBuildings.includes(directory.id))
 				return (
 					<tr key={directory.id} onClick={() => this.props.selectedUpdate(directory.id)}>
 						<td>{directory.code} </td>
