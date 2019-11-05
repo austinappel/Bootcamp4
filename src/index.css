@@ -18,7 +18,7 @@ header {
 	margin-bottom: 2rem;
 }
 
-input[type='text'] {
+.search-form {
 	margin: 1rem;
 	background: #fff;
 	font-size: 1.3rem;
@@ -31,16 +31,13 @@ input[type='text'] {
 }
 
 /* ##### NamesList ##### */
-tr {
-	padding: 0;
-}
-th {
+
+tr:hover{
 	position: left;
-	list-style: none;
-	padding: 0.25rem 0.75rem;
-	margin: 2px;
-	border-radius: 3px;
+	cursor: pointer;
+	background-color: #ddd;
 }
+
 td:hover {
 	position: left;
 	cursor: pointer;
@@ -84,6 +81,11 @@ td:hover {
 	scroll-behavior: smooth;
 }
 
+.table {
+	max-height: 800px;
+	overflow: auto;
+}
+
 /* ##### Footer ##### */
 .credit {
 	padding: 1rem 0;
@@ -105,4 +107,13 @@ button {
 }
 button:hover {
 	background: #ddd;
+}
+
+/* ##### Building View ##### */
+.view-building {
+	
+}
+
+.input-form {
+	
 }

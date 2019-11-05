@@ -12,7 +12,8 @@ class Search extends React.Component {
 		
 		return (
 			<form>
-				<input 
+				<input
+					class="search-form"
 					type="text"
 					placeholder="Type to Filter"
 					ref={(value) => {this.myValue = value}}

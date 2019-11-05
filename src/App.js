@@ -71,7 +71,7 @@ class App extends React.Component {
     
     return (
       <div className="bg">
-        <div className="row">
+        <div className="row" class="text-center">
           <h1>UF Directory App</h1>
         </div>
 
@@ -80,50 +80,62 @@ class App extends React.Component {
           filterUpdate={this.filterUpdate.bind(this)}
         />
         <main>
-          <div className="row">
-            <div className="column1">
-              <div className="tableWrapper">
-                <table className="table table-striped table-hover">
-                  <tr>
-                    <td>
-                      <b>Code Building</b>
-                    </td>
-                  </tr>
-                  <BuildingList
-                    data={this.props.data}
-                    filterText={this.state.filterText}
-                    selectedUpdate={this.selectedUpdate.bind(this)}
-                    removedBuildings={this.state.removedBuildings}
-                    addedBuildings={this.state.addedBuildings}
-                    dataStateUpdate={this.dataStateUpdate.bind(this)}
-                    dataState={this.state.dataState}
-                  />
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <table class="table table-responsive table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Code</th>
+                      <th scope="col">Building</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <BuildingList
+                      data={this.props.data}
+                      filterText={this.state.filterText}
+                      selectedUpdate={this.selectedUpdate.bind(this)}
+                      removedBuildings={this.state.removedBuildings}
+                      addedBuildings={this.state.addedBuildings}
+                      dataStateUpdate={this.dataStateUpdate.bind(this)}
+                      dataState={this.state.dataState}
+                    />
+                  </tbody>
                 </table>
               </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col text-center bg-light">
+                    <ViewBuilding
+                      data={this.props.data}
+                      selectedBuilding={this.state.selectedBuilding}
+                      dataState={this.state.dataState}
+                    />
+                    <RemoveBuilding
+                      removedUpdate={this.removedUpdate.bind(this)}
+                      selectedBuilding={this.state.selectedBuilding}
+                      dataState={this.props.dataState}
+                    /> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col bg-light">
+                    <AddBuilding
+                      addedBuildings={this.addedBuildings}
+                      addedUpdate={this.addedUpdate.bind(this)}
+                      dataLength={this.state.dataLength}
+                      lengthUpdate={this.lengthUpdate.bind(this)}
+                      dataStateUpdate={this.dataStateUpdate.bind(this)}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="column2">
-              <ViewBuilding
-                data={this.props.data}
-                selectedBuilding={this.state.selectedBuilding}
-                dataState={this.state.dataState}
-              />
-              <RemoveBuilding
-                removedUpdate={this.removedUpdate.bind(this)}
-                selectedBuilding={this.state.selectedBuilding}
-                dataState={this.props.dataState}
-              /> 
+            <div class="row">
+              <Credit />
             </div>
-            <div className="column2-2">
-              <AddBuilding
-                addedBuildings={this.addedBuildings}
-                addedUpdate={this.addedUpdate.bind(this)}
-                dataLength={this.state.dataLength}
-                lengthUpdate={this.lengthUpdate.bind(this)}
-                dataStateUpdate={this.dataStateUpdate.bind(this)}
-              />
-            </div> 
           </div>
-          <Credit />
+          
         </main>
       </div>
     );
