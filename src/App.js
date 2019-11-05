@@ -12,7 +12,9 @@ class App extends React.Component {
     this.state = {
       filterText: '',
       selectedBuilding: 0,
-      removedBuildings: []
+      removedBuildings: [],
+      addedBuildings: [],
+      dataLength: 149
     };
   }
 
@@ -36,8 +38,20 @@ class App extends React.Component {
     this.setState({
       removedBuildings: newArray
     })
+  }
 
-    console.log("Removed buildings: ", this.state.removedBuildings)
+  addedUpdate(building) {
+    var newArray = this.state.addedBuildings;
+    newArray.push(building);
+    this.setState({
+      addedBuildings: newArray
+    })
+  }
+
+  lengthUpdate() {
+    this.setState({
+      dataLength: this.state.dataLength + 1
+    })
   }
 
   render() {
@@ -67,6 +81,7 @@ class App extends React.Component {
                     filterText={this.state.filterText}
                     selectedUpdate={this.selectedUpdate.bind(this)}
                     removedBuildings={this.state.removedBuildings}
+                    addedBuildings={this.state.addedBuildings}
                   />
                 </table>
               </div>
@@ -79,8 +94,16 @@ class App extends React.Component {
               <RemoveBuilding
                 removedUpdate={this.removedUpdate.bind(this)}
                 selectedBuilding={this.state.selectedBuilding}
-              />
+              /> 
             </div>
+            <div className="column2-2">
+              <AddBuilding
+                addedBuildings={this.addedBuildings}
+                addedUpdate={this.addedUpdate.bind(this)}
+                dataLength={this.state.dataLength}
+                lengthUpdate={this.lengthUpdate.bind(this)}
+              />
+            </div> 
           </div>
           <Credit />
         </main>

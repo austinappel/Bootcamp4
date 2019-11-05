@@ -5,7 +5,24 @@ class BuilingList extends React.Component {
 	render() {
 		//console.log('This is my directory file', this.props.data);
 		
-		const { data } = this.props;
+		var { data } = this.props;
+		
+		var newData = data.slice();
+		newData = newData.concat(this.props.addedBuildings)
+
+		data = newData;
+		//var newData = this.props.addedBuildings;
+		
+
+		//var newData = this.props.data;
+		//newData.push(this.props.addedBuildings);
+
+		//console.log("To add: ", this.props.addedBuildings);
+		console.log("New Data: ", newData);
+		console.log("Added Buildings: ", this.props.addedBuildings)
+		
+		//data = newData;
+
 		const filterText = this.props.filterText; 
 
 		const buildingList = data
