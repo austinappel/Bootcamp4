@@ -88,15 +88,25 @@ class App extends React.Component {
             </div>
             <div class="row">
               <div class="col">
-                <BuildingList
-                    data={this.props.data}
-                    filterText={this.state.filterText}
-                    selectedUpdate={this.selectedUpdate.bind(this)}
-                    removedBuildings={this.state.removedBuildings}
-                    addedBuildings={this.state.addedBuildings}
-                    dataStateUpdate={this.dataStateUpdate.bind(this)}
-                    dataState={this.state.dataState}
-                  />
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Code</th>
+                      <th scope="col">Building</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <BuildingList
+                      data={this.props.data}
+                      filterText={this.state.filterText}
+                      selectedUpdate={this.selectedUpdate.bind(this)}
+                      removedBuildings={this.state.removedBuildings}
+                      addedBuildings={this.state.addedBuildings}
+                      dataStateUpdate={this.dataStateUpdate.bind(this)}
+                      dataState={this.state.dataState}
+                    />
+                  </tbody>
+                </table>
               </div>
               <div class="col">
                 <ViewBuilding

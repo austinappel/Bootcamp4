@@ -33,10 +33,16 @@ class BuilingList extends React.Component {
 			.map(directory => {
 				if (!this.props.removedBuildings.includes(directory.id))
 				return (
+					
 					<tr key={directory.id} onClick={() => this.props.selectedUpdate(directory.id)}>
-						<td>{directory.code} </td>
-						<td> {directory.name} </td>
+						<th scope="row">
+							{directory.code}
+						</th>
+						<th scope="row">
+							{directory.name}
+						</th>
 					</tr>
+					
 				);
 			});
 
