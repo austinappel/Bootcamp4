@@ -3,7 +3,8 @@ import React from 'react';
 class ViewBuilding extends React.Component {
 
 	render() {
-		var {data} = this.props
+		//var {data} = this.props
+		var data = this.props.dataState.slice()
 		const selectedBuilding = this.props.selectedBuilding
 		
 

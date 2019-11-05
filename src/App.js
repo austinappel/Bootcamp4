@@ -105,10 +105,12 @@ class App extends React.Component {
               <ViewBuilding
                 data={this.props.data}
                 selectedBuilding={this.state.selectedBuilding}
+                dataState={this.state.dataState}
               />
               <RemoveBuilding
                 removedUpdate={this.removedUpdate.bind(this)}
                 selectedBuilding={this.state.selectedBuilding}
+                dataState={this.props.dataState}
               /> 
             </div>
             <div className="column2-2">
