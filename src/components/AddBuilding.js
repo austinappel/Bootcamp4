@@ -16,6 +16,9 @@ class AddBuilding extends React.Component {
 
         this.props.lengthUpdate();
         this.props.addedUpdate(building);
+
+        this.props.dataStateUpdate(building);
+        
     }
 
 	render() {

@@ -3,9 +3,15 @@ import React from 'react';
 class ViewBuilding extends React.Component {
 
 	render() {
-		const {data} = this.props
+		var {data} = this.props
 		const selectedBuilding = this.props.selectedBuilding
 		
+
+		let code = ''
+		let name = ''
+		let address = ''
+		let longitude = ''
+		let latitude = ''
 	
 
 		if (selectedBuilding === 0) {
@@ -19,12 +25,16 @@ class ViewBuilding extends React.Component {
 			);
 		}
 		else {
+			console.log("DATA DISPLAYED: ", data);
+			console.log("INDEX: ", selectedBuilding);
+
 			// Get all the info to display
-			const code = data[selectedBuilding-1].code
-			const name = data[selectedBuilding-1].name
-			const address = data[selectedBuilding-1].address
-			let longitude = ''
-			let latitude = ''
+			if (data[selectedBuilding-1].code)
+				code = data[selectedBuilding-1].code
+			if (data[selectedBuilding-1].name)
+				name = data[selectedBuilding-1].name
+			if (data[selectedBuilding-1].address)
+				address = data[selectedBuilding-1].address
 			if (data[selectedBuilding-1].coordinates) {
 				latitude = data[selectedBuilding-1].coordinates.latitude
 			}

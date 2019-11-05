@@ -14,7 +14,8 @@ class App extends React.Component {
       selectedBuilding: 0,
       removedBuildings: [],
       addedBuildings: [],
-      dataLength: 149
+      dataLength: 149,
+      dataState: this.props.data.slice()
     };
   }
 
@@ -54,6 +55,18 @@ class App extends React.Component {
     })
   }
 
+  dataStateUpdate(newBuilding) {
+    var {data}  = this.props;
+    var newData = data.slice();
+    newData.push(newBuilding);
+
+    this.setState({
+		  dataState: newData
+    })
+
+    console.log("New data state: ", this.state.dataState)
+  }
+
   render() {
     
     return (
@@ -82,6 +95,8 @@ class App extends React.Component {
                     selectedUpdate={this.selectedUpdate.bind(this)}
                     removedBuildings={this.state.removedBuildings}
                     addedBuildings={this.state.addedBuildings}
+                    dataStateUpdate={this.dataStateUpdate.bind(this)}
+                    dataState={this.state.dataState}
                   />
                 </table>
               </div>
@@ -102,6 +117,7 @@ class App extends React.Component {
                 addedUpdate={this.addedUpdate.bind(this)}
                 dataLength={this.state.dataLength}
                 lengthUpdate={this.lengthUpdate.bind(this)}
+                dataStateUpdate={this.dataStateUpdate.bind(this)}
               />
             </div> 
           </div>
