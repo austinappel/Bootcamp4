@@ -83,12 +83,7 @@ class App extends React.Component {
           <div class="container">
             <div class="row">
               <div class="col">
-                <b>Code Building</b>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <table class="table">
+                <table class="table table-responsive table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Code</th>
