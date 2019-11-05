@@ -104,23 +104,31 @@ class App extends React.Component {
                 </table>
               </div>
               <div class="col">
-                <ViewBuilding
-                  data={this.props.data}
-                  selectedBuilding={this.state.selectedBuilding}
-                  dataState={this.state.dataState}
-                />
-                <RemoveBuilding
-                  removedUpdate={this.removedUpdate.bind(this)}
-                  selectedBuilding={this.state.selectedBuilding}
-                  dataState={this.props.dataState}
-                /> 
-                <AddBuilding
-                  addedBuildings={this.addedBuildings}
-                  addedUpdate={this.addedUpdate.bind(this)}
-                  dataLength={this.state.dataLength}
-                  lengthUpdate={this.lengthUpdate.bind(this)}
-                  dataStateUpdate={this.dataStateUpdate.bind(this)}
-                />
+                <div class="row">
+                  <div class="col text-center bg-light">
+                    <ViewBuilding
+                      data={this.props.data}
+                      selectedBuilding={this.state.selectedBuilding}
+                      dataState={this.state.dataState}
+                    />
+                    <RemoveBuilding
+                      removedUpdate={this.removedUpdate.bind(this)}
+                      selectedBuilding={this.state.selectedBuilding}
+                      dataState={this.props.dataState}
+                    /> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col bg-light">
+                    <AddBuilding
+                      addedBuildings={this.addedBuildings}
+                      addedUpdate={this.addedUpdate.bind(this)}
+                      dataLength={this.state.dataLength}
+                      lengthUpdate={this.lengthUpdate.bind(this)}
+                      dataStateUpdate={this.dataStateUpdate.bind(this)}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">

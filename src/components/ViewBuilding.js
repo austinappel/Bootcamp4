@@ -45,15 +45,11 @@ class ViewBuilding extends React.Component {
 		
 
 			return (
-				<div>
-					<p>Code: {code}</p>
-					<p>Name: {name}</p>
-					<p>Address: {address}</p>
-					<p>Coordinates:</p>
-					<ul>
-						<li>Latitude: {latitude}</li>
-						<li>Longitude: {longitude}</li>
-					</ul> 
+				<div class="text-center">
+					<h1><b>{code}</b></h1>
+					<h2>{name}</h2>
+					<h5>{address}</h5>
+					<p>Coordinates: {latitude}, {longitude}</p>
 				</div>
 			);
 		}

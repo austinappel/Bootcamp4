@@ -23,38 +23,34 @@ class AddBuilding extends React.Component {
 
 	render() {
 		return (
-            <form>
-                <input
-                    type="text"
-                    placeholder="Building Code"
-                    id="codeValue"
-                />
-                <input
-                    type="text"
-                    placeholder="Building Name"
-                    id="nameValue"
-                />
-                <input
-                    type="text"
-                    placeholder="Address"
-                    id="addressValue"
-                />
-                <input
-                    type="text"
-                    placeholder="Latitude"
-                    id="latValue"
-                />
-                <input
-                    type="text"
-                    placeholder="Longitude"
-                    id="longValue"
-                />
+            <form class="input-form">
+                <div class="form-group">
+                    <label for="codeValue">Code</label>
+                    <input type="text" class="form-control" placeholder="Enter code" id="codeValue" />
+                </div>
+                <div class="form-group">
+                    <label for="nameValue">Building name</label>
+                    <input type="text" class="form-control" placeholder="Enter name of buiding" id="nameValue" />
+                </div>
+                <div class="form-group">
+                    <label for="addressValue">Address</label>
+                    <input type="text" class="form-control" placeholder="Enter code" id="addressValue" />
+                </div>
+                <div class="form-group">
+                    <label>Coordinates</label>
+                    <input type="text" class="form-control" placeholder="Latitude" id="latValue" />
+                    <input type="text" class="form-control" placeholder="Longitude" id="longValue" />
+                </div>
                 <input
                     type="button"
                     value="Add Building"
                     onClick={this.addBuilding}
                 />
-            </form> 
+            </form>
+                
+                
+                
+                
         )
 	}
 }
