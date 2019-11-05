@@ -41,11 +41,14 @@ class AddBuilding extends React.Component {
                     <input type="text" class="form-control" placeholder="Latitude" id="latValue" />
                     <input type="text" class="form-control" placeholder="Longitude" id="longValue" />
                 </div>
-                <input
-                    type="button"
-                    value="Add Building"
-                    onClick={this.addBuilding}
-                />
+                <div class="text-center">
+                    <input
+                        type="button"
+                        class="btn"
+                        value="Add Building"
+                        onClick={this.addBuilding}
+                    />
+                </div>
             </form>
                 
                 

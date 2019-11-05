@@ -10,6 +10,7 @@ class RemoveBuilding extends React.Component {
 		return (
             <form>
                 <input
+                    class="btn"
                     type="button"
                     value="Remove Building"
                     onClick={() => this.props.removedUpdate(this.props.selectedBuilding)}

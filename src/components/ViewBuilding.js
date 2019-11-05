@@ -46,9 +46,8 @@ class ViewBuilding extends React.Component {
 
 			return (
 				<div class="text-center">
-					<h1><b>{code}</b></h1>
-					<h2>{name}</h2>
-					<h5>{address}</h5>
+					<h3><b>{code}</b> - {name}</h3>
+					<h6>{address}</h6>
 					<p>Coordinates: {latitude}, {longitude}</p>
 				</div>
 			);
