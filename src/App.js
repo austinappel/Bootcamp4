@@ -80,16 +80,15 @@ class App extends React.Component {
           filterUpdate={this.filterUpdate.bind(this)}
         />
         <main>
-          <div className="row">
-            <div className="column1">
-              <div className="tableWrapper">
-                <table className="table table-striped table-hover">
-                  <tr>
-                    <td>
-                      <b>Code Building</b>
-                    </td>
-                  </tr>
-                  <BuildingList
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <b>Code Building</b>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <BuildingList
                     data={this.props.data}
                     filterText={this.state.filterText}
                     selectedUpdate={this.selectedUpdate.bind(this)}
@@ -98,32 +97,32 @@ class App extends React.Component {
                     dataStateUpdate={this.dataStateUpdate.bind(this)}
                     dataState={this.state.dataState}
                   />
-                </table>
+              </div>
+              <div class="col">
+                <ViewBuilding
+                  data={this.props.data}
+                  selectedBuilding={this.state.selectedBuilding}
+                  dataState={this.state.dataState}
+                />
+                <RemoveBuilding
+                  removedUpdate={this.removedUpdate.bind(this)}
+                  selectedBuilding={this.state.selectedBuilding}
+                  dataState={this.props.dataState}
+                /> 
+                <AddBuilding
+                  addedBuildings={this.addedBuildings}
+                  addedUpdate={this.addedUpdate.bind(this)}
+                  dataLength={this.state.dataLength}
+                  lengthUpdate={this.lengthUpdate.bind(this)}
+                  dataStateUpdate={this.dataStateUpdate.bind(this)}
+                />
               </div>
             </div>
-            <div className="column2">
-              <ViewBuilding
-                data={this.props.data}
-                selectedBuilding={this.state.selectedBuilding}
-                dataState={this.state.dataState}
-              />
-              <RemoveBuilding
-                removedUpdate={this.removedUpdate.bind(this)}
-                selectedBuilding={this.state.selectedBuilding}
-                dataState={this.props.dataState}
-              /> 
+            <div class="row">
+              <Credit />
             </div>
-            <div className="column2-2">
-              <AddBuilding
-                addedBuildings={this.addedBuildings}
-                addedUpdate={this.addedUpdate.bind(this)}
-                dataLength={this.state.dataLength}
-                lengthUpdate={this.lengthUpdate.bind(this)}
-                dataStateUpdate={this.dataStateUpdate.bind(this)}
-              />
-            </div> 
           </div>
-          <Credit />
+          
         </main>
       </div>
     );
